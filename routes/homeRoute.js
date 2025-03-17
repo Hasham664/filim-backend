@@ -1,5 +1,5 @@
 import express from 'express';
-import { createGetHome, createHomePage } from '../controllers/HomeController.js';
+import { createGetHome, createHomePage } from '../controllers/homeController.js';
 import upload from '../middlewere/multer.js';
 
 
