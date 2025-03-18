@@ -9,6 +9,7 @@ import festivalRoute from './routes/festivalRoute.js';
 import studioRoute from './routes/studio.js';
 import contatcRoute from './routes/contact.js';
 import formRoute from './routes/form.js';
+import blogRoute from './routes/blogRoute.js';
 
 // dotenv.config();
 
@@ -27,6 +28,8 @@ app.use('/api/festival', festivalRoute);
 app.use('/api/studio', studioRoute);
 app.use('/api/contact', contatcRoute);
 app.use('/api/form', formRoute);
+app.use('/api/blog', blogRoute);
+
 
 
 
