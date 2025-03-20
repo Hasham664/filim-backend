@@ -10,6 +10,8 @@ import studioRoute from './routes/studio.js';
 import contatcRoute from './routes/contact.js';
 import formRoute from './routes/form.js';
 import blogRoute from './routes/blogRoute.js';
+import newRoute from './routes/newRoute.js';
+import navbarRouter from './routes/navbarRoute.js';
 
 // dotenv.config();
 
@@ -29,6 +31,8 @@ app.use('/api/studio', studioRoute);
 app.use('/api/contact', contatcRoute);
 app.use('/api/form', formRoute);
 app.use('/api/blog', blogRoute);
+app.use('/api/news', newRoute);
+app.use('/api', navbarRouter);
 
 
 
