@@ -116,3 +116,138 @@ export const createGetFestival = async (req, res) => {
       .json({ success: false, error: 'Failed to fetch festival' });
   }
 };
+
+
+
+// UPDATE 
+
+
+export const updatedFestival = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const existingFestival = await festivalSchema.findById(id);
+    if (!existingFestival) {
+      return res.status(404).json({
+        success: false,
+        message: 'Festival page not found',
+      });
+    }
+
+    const updates = {};
+    console.log('Raw req.body:', req.body);
+
+    // Update Hero section if provided
+    if (req.body.hero) {
+      let heroData = JSON.parse(req.body.hero);
+      // If a new file is uploaded, process it.
+      if (req.files && req.files.heroImage && req.files.heroImage.length) {
+        const heroFilePath = req.files.heroImage[0].path;
+        const uploadResult = await uploadOnCloudinary(heroFilePath, {
+          resource_type: 'video',
+        });
+        heroData.bgImage = uploadResult?.secure_url;
+      } else {
+        // If no new image is provided, preserve the existing bgImage.
+        heroData.bgImage = existingFestival.hero?.bgImage;
+      }
+      updates.hero = heroData;
+    }
+
+    // Update Advance section if provided
+    if (req.body.advance) {
+      let advanceData = JSON.parse(req.body.advance);
+      if (
+        req.files &&
+        req.files.advanceImage &&
+        req.files.advanceImage.length
+      ) {
+        const advanceFilePath = req.files.advanceImage[0].path;
+        const uploadResult = await uploadOnCloudinary(advanceFilePath);
+        advanceData.bgImage = uploadResult?.secure_url;
+      } else {
+        advanceData.bgImage = existingFestival.advance?.bgImage;
+      }
+      updates.advance = advanceData;
+    }
+
+    // Update Toplist section if provided
+    if (req.body.toplist) {
+      let toplistData = JSON.parse(req.body.toplist);
+      if (
+        req.files &&
+        req.files.toplistImage &&
+        req.files.toplistImage.length
+      ) {
+        const toplistFilePath = req.files.toplistImage[0].path;
+        const uploadResult = await uploadOnCloudinary(toplistFilePath);
+        toplistData.bgImage = uploadResult?.secure_url;
+      } else {
+        toplistData.bgImage = existingFestival.toplist?.bgImage;
+      }
+      updates.toplist = toplistData;
+    }
+
+    // Update Robot section if provided
+    if (req.body.robot) {
+      let robotData = JSON.parse(req.body.robot);
+      if (req.files && req.files.robotImage && req.files.robotImage.length) {
+        const robotFilePath = req.files.robotImage[0].path;
+        const uploadResult = await uploadOnCloudinary(robotFilePath);
+        robotData.bgImage = uploadResult?.secure_url;
+      } else {
+        robotData.bgImage = existingFestival.robot?.bgImage;
+      }
+      updates.robot = robotData;
+    }
+
+    // Update Competate section if provided
+    if (req.body.competate) {
+      let competateData = JSON.parse(req.body.competate);
+      if (
+        req.files &&
+        req.files.competateImage &&
+        req.files.competateImage.length
+      ) {
+        const competateFilePath = req.files.competateImage[0].path;
+        const uploadResult = await uploadOnCloudinary(competateFilePath);
+        competateData.bgImage = uploadResult?.secure_url;
+      } else {
+        competateData.bgImage = existingFestival.competate?.bgImage;
+      }
+      updates.competate = competateData;
+    }
+
+    // Update Runway section if provided
+    if (req.body.runway) {
+      let runwayData = JSON.parse(req.body.runway);
+      if (req.files && req.files.runwayImage && req.files.runwayImage.length) {
+        const runwayFilePath = req.files.runwayImage[0].path;
+        const uploadResult = await uploadOnCloudinary(runwayFilePath);
+        runwayData.bgImage = uploadResult?.secure_url;
+      } else {
+        runwayData.bgImage = existingFestival.runway?.bgImage;
+      }
+      updates.runway = runwayData;
+    }
+
+    console.log('Updates object:', updates);
+
+    const updatedFestival = await festivalSchema.findByIdAndUpdate(
+      id,
+      { $set: updates },
+      { new: true }
+    );
+
+    return res.status(200).json({
+      success: true,
+      festival: updatedFestival,
+      message: 'Festival page updated successfully',
+    });
+  } catch (error) {
+    console.error('Error updating service page:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to update festival page',
+    });
+  }
+};

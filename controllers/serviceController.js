@@ -18,9 +18,6 @@ export const createServicePage = async (req, res) => {
     let competateImage = req.files?.competateImage[0]?.path;
     let runwayImage = req.files?.runwayImage[0]?.path;
 
-    // if(!hero||!advance||!toplist||!robot||!competate||!runway){
-    // return res.status(404).json({ success: false, message:'some section is missing'});
-    // }
     console.log(req.files.heroImage, 'heroImage');
 
     if (heroVideoPath) {
@@ -142,7 +139,6 @@ export const updateServicePage = async (req, res) => {
     // Update Hero section if provided
     if (req.body.hero) {
       let heroData = JSON.parse(req.body.hero);
-      // If a new file is uploaded, process it.
       if (req.files && req.files.heroImage && req.files.heroImage.length) {
         const heroFilePath = req.files.heroImage[0].path;
         const uploadResult = await uploadOnCloudinary(heroFilePath, {
