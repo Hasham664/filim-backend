@@ -12,6 +12,8 @@ import formRoute from './routes/form.js';
 import blogRoute from './routes/blogRoute.js';
 import newRoute from './routes/newRoute.js';
 import navbarRouter from './routes/navbarRoute.js';
+import footerRouter from './routes/footerRoute.js';
+import metaRouter from './routes/metaRoute.js';
 
 // dotenv.config();
 
@@ -33,6 +35,8 @@ app.use('/api/form', formRoute);
 app.use('/api/blog', blogRoute);
 app.use('/api/news', newRoute);
 app.use('/api', navbarRouter);
+app.use('/api', footerRouter);
+app.use('/api', metaRouter);
 
 
 

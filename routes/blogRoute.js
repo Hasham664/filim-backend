@@ -1,6 +1,6 @@
 import express from 'express';
 import upload from '../middlewere/multer.js';
-import { createBlog, getBlogs } from '../controllers/blogController.js';
+import { createBlog, getBlogs, updateBlog } from '../controllers/blogController.js';
 
 const blogRoute = express.Router();
 
@@ -16,4 +16,14 @@ blogRoute.post(
   createBlog
 );
 
+blogRoute.put(
+  '/blogrouteupdate/:id',
+  upload.fields([
+    {
+      name: 'image',
+      maxCount: 1,
+    },
+  ]),
+  updateBlog
+);
 export default blogRoute;

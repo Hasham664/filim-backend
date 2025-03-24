@@ -6,7 +6,7 @@ export const createFormPost = async (req, res) => {
     const { firstName, lastName, email, topic, message ,phone,orderNumber,salonName} = req.body;
 
     // Validate required fields
-    if (!firstName || !lastName || !email || !topic || !message) {
+    if (!firstName || !lastName || !email || !topic || !phone) {
       return res.status(400).json({
         success: false,
         error: 'Please fill all the required fields',
