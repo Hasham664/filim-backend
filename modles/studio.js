@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const StudioPageSchema = new mongoose.Schema({
   hero: {
+    alt: { type: String },
     bgImage: { type: String },
     title: { type: String },
   },
@@ -12,6 +13,7 @@ const StudioPageSchema = new mongoose.Schema({
     description: { type: String },
   },
   toplist: {
+    alt: { type: String },
     bgImage: { type: String },
     title: { type: String },
     genre: { type: String },
@@ -22,6 +24,7 @@ const StudioPageSchema = new mongoose.Schema({
   },
 
   competate: {
+    alt: { type: String },
     bgImage: { type: String },
     title: { type: String },
     genre: { type: String },
@@ -30,6 +33,7 @@ const StudioPageSchema = new mongoose.Schema({
     button: { type: String },
   },
   toplist2: {
+    alt: { type: String },
     bgImage: { type: String },
     title: { type: String },
     genre: { type: String },
@@ -39,6 +43,7 @@ const StudioPageSchema = new mongoose.Schema({
     button: { type: String },
   },
   competate2: {
+    alt: { type: String },
     bgImage: { type: String },
     title: { type: String },
     genre: { type: String },

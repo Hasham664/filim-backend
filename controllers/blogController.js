@@ -3,24 +3,39 @@ import { uploadOnCloudinary } from '../utils/cloudinary.js';
 
 export const createBlog = async (req, res) => {
   try {
-    const { title, author, content } = req.body;
-    let imagePath = req.files?.image[0]?.path;
+    const { title, author, content, alt } = req.body;
+
+    // Check if an image file is provided
+    if (!req.files || !req.files.image || req.files.image.length === 0) {
+      return res.status(400).json({
+        success: false,
+        error: 'Image file is required',
+      });
+    }
+
+    // Safely access the image file path
+    const imagePath = req.files.image[0].path;
     let imageUrl = '';
+
     if (imagePath) {
       const uploadResponse = await uploadOnCloudinary(imagePath);
       imageUrl = uploadResponse.secure_url;
     }
+
     const newBlog = new blogSchema({
       title,
+      alt,
       author,
       content,
       image: imageUrl,
     });
+
     const savedBlog = await newBlog.save();
+
     return res.status(201).json({
       success: true,
       blog: savedBlog,
-      message: 'Blog post successfully',
+      message: 'Blog post created successfully',
     });
   } catch (error) {
     console.error('Error creating blog:', error);
@@ -51,20 +66,13 @@ export const getBlogs = async (req, res) => {
 };
 
 
-
-
-
-
-
-
-
 //  Update an existing blog post.
 
 export const updateBlog = async (req, res) => {
   try {
     // Extract blog id from URL parameters and updated data from the request body.
     const { id } = req.params;
-    const { title, author, content } = req.body;
+    const { title, author, content,alt } = req.body;
 
     // Retrieve the blog post to update.
     const blogToUpdate = await blogSchema.findById(id);
@@ -86,6 +94,7 @@ export const updateBlog = async (req, res) => {
     blogToUpdate.title = title || blogToUpdate.title;
     blogToUpdate.author = author || blogToUpdate.author;
     blogToUpdate.content = content || blogToUpdate.content;
+    blogToUpdate.alt = alt || blogToUpdate.alt;
 
     // Save the updated blog post.
     const updatedBlog = await blogToUpdate.save();

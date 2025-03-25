@@ -61,6 +61,7 @@ export const createStudioPage = async (req, res) => {
       hero: {
         bgImage: heroVideoPath?.secure_url,
         title: hero1.title,
+        alt: hero1.alt
       },
       advance: {
         title: advance1.title,
@@ -68,6 +69,7 @@ export const createStudioPage = async (req, res) => {
         description: advance1.description,
       },
       toplist: {
+        alt: topList1.alt,
         bgImage: toplistImage?.secure_url,
         title: topList1.title,
         genre: topList1.genre,
@@ -77,6 +79,7 @@ export const createStudioPage = async (req, res) => {
         button: topList1.button,
       },
       toplist2: {
+        alt: toplisted.alt,
         bgImage: toplistImage2?.secure_url,
         title: toplisted.title,
         genre: toplisted.genre,
@@ -86,6 +89,7 @@ export const createStudioPage = async (req, res) => {
         button: toplisted.button,
       },
       competate: {
+        alt: competate1.alt,
         bgImage: competateImage?.secure_url,
         title: competate1.title,
         genre: competate1.genre,
@@ -94,6 +98,7 @@ export const createStudioPage = async (req, res) => {
         button: competate1.button,
       },
       competate2: {
+        alt: competated.alt,
         bgImage: competateImage2?.secure_url,
         title: competated.title,
         genre: competated.genre,
@@ -191,6 +196,7 @@ export const updateStudioPage = async (req, res) => {
     const updatedHero = {
       title: hero1.title || currentStudio.hero.title,
       bgImage: heroVideoPath?.secure_url || currentStudio.hero.bgImage,
+      alt: hero1.alt || currentStudio.hero.alt,
     };
 
     const updatedAdvance = {
@@ -200,6 +206,7 @@ export const updateStudioPage = async (req, res) => {
     };
 
     const updatedToplist = {
+      alt: topList1.alt || currentStudio.toplist.alt,
       title: topList1.title || currentStudio.toplist.title,
       genre: topList1.genre || currentStudio.toplist.genre,
       line: topList1.line || currentStudio.toplist.line,
@@ -210,6 +217,7 @@ export const updateStudioPage = async (req, res) => {
     };
 
     const updatedToplist2 = {
+      alt: toplisted.alt || currentStudio.toplist2.alt,
       title: toplisted.title || currentStudio.toplist2.title,
       genre: toplisted.genre || currentStudio.toplist2.genre,
       line: toplisted.line || currentStudio.toplist2.line,
@@ -221,6 +229,7 @@ export const updateStudioPage = async (req, res) => {
     };
 
     const updatedCompetate = {
+      alt: competate1.alt || currentStudio.competate.alt,
       title: competate1.title || currentStudio.competate.title,
       genre: competate1.genre || currentStudio.competate.genre,
       description:
@@ -232,6 +241,7 @@ export const updateStudioPage = async (req, res) => {
     };
 
     const updatedCompetate2 = {
+      alt: competated.alt || currentStudio.competate2.alt,
       title: competated.title || currentStudio.competate2.title,
       genre: competated.genre || currentStudio.competate2.genre,
       description:

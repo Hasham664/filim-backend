@@ -2,10 +2,11 @@ import mongoose, { Schema } from 'mongoose';
 
 const blogSchema = new Schema(
   {
-    title: { type: String, required: true },
-    author: { type: String, required: true },
-    content: { type: String, required: true },
-    image: { type: String, required: true },
+    title: { type: String },
+    alt:   {type:  String},
+    author: { type: String },
+    content: { type: String },
+    image: { type: String },
   },
   { timestamps: true }
 );

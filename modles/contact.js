@@ -4,6 +4,7 @@ const ContactPageSchema = new mongoose.Schema({
   hero: {
     bgImage: { type: String },
     title: { type: String },
+    alt: { type: String },
     
   },
 

@@ -1,8 +1,9 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const NewsPageSchema = new mongoose.Schema({
-    bgImage: { type: String },
-    title: { type: String },
+  bgImage: { type: String },
+  title: { type: String },
+  alt: { type: String },
 });
 
 const newsSchema =

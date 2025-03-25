@@ -53,32 +53,38 @@ export const createFestivalPage = async (req, res) => {
       hero: {
         bgImage: heroVideoPath?.secure_url,
         title: hero1.title,
+        alt: hero1.alt,
       },
       advance: {
+        alt: advance1.alt,
         bgImage: advanceImage?.secure_url,
         title: advance1.title,
         title2: advance1.title2,
         description: advance1.description,
       },
       toplist: {
+        alt: topList1.alt,
         bgImage: toplistImage?.secure_url,
         title: topList1.title,
         description: topList1.description,
         button: topList1.button,
       },
       robot: {
+        alt: robot1.alt,
         bgImage: robotImage?.secure_url,
         title: robot1.title,
         description: robot1.description,
         button: robot1.button,
       },
       competate: {
+        alt: competate1.alt,
         bgImage: competateImage?.secure_url,
         title: competate1.title,
         description: competate1.description,
         button: competate1.button,
       },
       runway: {
+        alt: runway1.alt,
         bgImage: runwayImage?.secure_url,
         title: runway1.title,
         button: runway1.button,

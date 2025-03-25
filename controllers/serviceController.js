@@ -51,35 +51,41 @@ export const createServicePage = async (req, res) => {
       hero: {
         bgImage: heroVideoPath?.secure_url,
         title: hero1.title,
+        alt: hero1.alt,
       },
       advance: {
         bgImage: advanceImage?.secure_url,
         title: advance1.title,
         title2: advance1.title2,
         description: advance1.description,
+        alt: advance1.alt,
       },
       toplist: {
         bgImage: toplistImage?.secure_url,
         title: topList1.title,
         description: topList1.description,
         button: topList1.button,
+        alt: topList1.alt,
       },
       robot: {
         bgImage: robotImage?.secure_url,
         title: robot1.title,
         description: robot1.description,
         button: robot1.button,
+        alt: robot1.alt,
       },
       competate: {
         bgImage: competateImage?.secure_url,
         title: competate1.title,
         description: competate1.description,
         button: competate1.button,
+        alt: competate1.alt,
       },
       runway: {
         bgImage: runwayImage?.secure_url,
         title: runway1.title,
         button: runway1.button,
+        alt: runway1.alt,
       },
     });
     const service = await newService.save();
