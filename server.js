@@ -14,6 +14,8 @@ import newRoute from './routes/newRoute.js';
 import navbarRouter from './routes/navbarRoute.js';
 import footerRouter from './routes/footerRoute.js';
 import metaRouter from './routes/metaRoute.js';
+import faqRoute from './routes/faqRoute.js';
+import termRoute from './routes/termRoute.js';
 
 // dotenv.config();
 
@@ -37,6 +39,10 @@ app.use('/api/news', newRoute);
 app.use('/api', navbarRouter);
 app.use('/api', footerRouter);
 app.use('/api', metaRouter);
+app.use('/api/faq', faqRoute);
+app.use('/api/term', termRoute);
+
+
 
 
 

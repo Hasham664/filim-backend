@@ -14,6 +14,9 @@ export const postmetaData = async (req, res) => {
       festival: { title: '', description: '' },
       news: { title: '', description: '' },
       contact: { title: '', description: '' },
+      blog: { title: '', description: '' },
+      faq: { title: '', description: '' },
+      terms: { title: '', description: '' },
     };
 
     // Override the specific page with the provided data.

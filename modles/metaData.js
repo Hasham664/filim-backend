@@ -26,6 +26,18 @@ const MetaDataSchema = new mongoose.Schema(
       title: { type: String },
       description: { type: String },
     },
+    blog: {
+      title: { type: String },
+      description: { type: String },
+    },
+    faq: {
+      title: { type: String },
+      description: { type: String },
+    },
+    terms: {
+      title: { type: String },
+      description: { type: String },
+    },
   },
   { timestamps: true }
 );
