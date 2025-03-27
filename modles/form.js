@@ -19,8 +19,6 @@ const FormSchema = new mongoose.Schema({
       'token',
     ],
   },
-  orderNumber: { type: String },
-  salonName: { type: String },
   message: { type: String, required: true },
 });
 

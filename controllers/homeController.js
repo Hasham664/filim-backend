@@ -11,6 +11,8 @@ export const createHomePage = async (req, res) => {
     const competate1 = JSON.parse(competate);
     const runway1 = JSON.parse(runway);
 
+    console.log(hero,'hero1 data');
+    
     let heroVideoPath = req.files?.heroImage[0]?.path;
     let advanceImage = req.files?.advanceImage[0]?.path;
     let toplistImage = req.files?.toplistImage[0]?.path;

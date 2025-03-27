@@ -4,6 +4,7 @@ import { uploadOnCloudinary } from '../utils/cloudinary.js';
 export const createBlog = async (req, res) => {
   try {
     const { title, author, content, alt } = req.body;
+    console.log(req.body, 'post data');
 
     // Check if an image file is provided
     if (!req.files || !req.files.image || req.files.image.length === 0) {
@@ -73,6 +74,8 @@ export const updateBlog = async (req, res) => {
     // Extract blog id from URL parameters and updated data from the request body.
     const { id } = req.params;
     const { title, author, content,alt } = req.body;
+    console.log(req.body,'update data');
+    
 
     // Retrieve the blog post to update.
     const blogToUpdate = await blogSchema.findById(id);

@@ -194,61 +194,61 @@ export const updateStudioPage = async (req, res) => {
 
     // Merge the current values with the new ones
     const updatedHero = {
-      title: hero1.title || currentStudio.hero.title,
+      title: hero1.title,
       bgImage: heroVideoPath?.secure_url || currentStudio.hero.bgImage,
-      alt: hero1.alt || currentStudio.hero.alt,
+      alt: hero1.alt ,
     };
 
     const updatedAdvance = {
-      title: advance1.title || currentStudio.advance.title,
-      title2: advance1.title2 || currentStudio.advance.title2,
-      description: advance1.description || currentStudio.advance.description,
+      title: advance1.title ,
+      title2: advance1.title2,
+      description: advance1.description || currentStudio.advance.description ,
     };
 
     const updatedToplist = {
-      alt: topList1.alt || currentStudio.toplist.alt,
-      title: topList1.title || currentStudio.toplist.title,
-      genre: topList1.genre || currentStudio.toplist.genre,
-      line: topList1.line || currentStudio.toplist.line,
-      description: topList1.description || currentStudio.toplist.description,
-      description2: topList1.description2 || currentStudio.toplist.description2,
-      button: topList1.button || currentStudio.toplist.button,
+      alt: topList1.alt ,
+      title: topList1.title ,
+      genre: topList1.genre ,
+      line: topList1.line ,
+      description: topList1.description ,
+      description2: topList1.description2 ,
+      button: topList1.button ,
       bgImage: toplistImage?.secure_url || currentStudio.toplist.bgImage,
     };
 
     const updatedToplist2 = {
-      alt: toplisted.alt || currentStudio.toplist2.alt,
-      title: toplisted.title || currentStudio.toplist2.title,
-      genre: toplisted.genre || currentStudio.toplist2.genre,
-      line: toplisted.line || currentStudio.toplist2.line,
-      description: toplisted.description || currentStudio.toplist2.description,
+      alt: toplisted.alt ,
+      title: toplisted.title ,
+      genre: toplisted.genre ,
+      line: toplisted.line ,
+      description: toplisted.description ,
       description2:
-        toplisted.description2 || currentStudio.toplist2.description2,
-      button: toplisted.button || currentStudio.toplist2.button,
+        toplisted.description2 ,
+      button: toplisted.button ,
       bgImage: toplistImage2?.secure_url || currentStudio.toplist2.bgImage,
     };
 
     const updatedCompetate = {
-      alt: competate1.alt || currentStudio.competate.alt,
-      title: competate1.title || currentStudio.competate.title,
-      genre: competate1.genre || currentStudio.competate.genre,
+      alt: competate1.alt ,
+      title: competate1.title ,
+      genre: competate1.genre ,
       description:
-        competate1.description || currentStudio.competate.description,
+        competate1.description ,
       description2:
-        competate1.description2 || currentStudio.competate.description2,
-      button: competate1.button || currentStudio.competate.button,
+        competate1.description2 ,
+      button: competate1.button ,
       bgImage: competateImage?.secure_url || currentStudio.competate.bgImage,
     };
 
     const updatedCompetate2 = {
-      alt: competated.alt || currentStudio.competate2.alt,
-      title: competated.title || currentStudio.competate2.title,
-      genre: competated.genre || currentStudio.competate2.genre,
+      alt: competated.alt ,
+      title: competated.title ,
+      genre: competated.genre ,
       description:
-        competated.description || currentStudio.competate2.description,
+        competated.description ,
       description2:
-        competated.description2 || currentStudio.competate2.description2,
-      button: competated.button || currentStudio.competate2.button,
+        competated.description2 ,
+      button: competated.button ,
       bgImage: competateImage2?.secure_url || currentStudio.competate2.bgImage,
     };
 
