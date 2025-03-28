@@ -21,6 +21,7 @@ const StudioPageSchema = new mongoose.Schema({
     description: { type: String },
     description2: { type: String },
     button: { type: String },
+    link: { type: String },
   },
 
   competate: {
@@ -31,6 +32,7 @@ const StudioPageSchema = new mongoose.Schema({
     description: { type: String },
     description2: { type: String },
     button: { type: String },
+    link: { type: String },
   },
   toplist2: {
     alt: { type: String },
@@ -41,6 +43,7 @@ const StudioPageSchema = new mongoose.Schema({
     description: { type: String },
     description2: { type: String },
     button: { type: String },
+    link: { type: String },
   },
   competate2: {
     alt: { type: String },
@@ -50,6 +53,7 @@ const StudioPageSchema = new mongoose.Schema({
     description: { type: String },
     description2: { type: String },
     button: { type: String },
+    link: { type: String },
   },
 });
 

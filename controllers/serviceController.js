@@ -66,6 +66,7 @@ export const createServicePage = async (req, res) => {
         description: topList1.description,
         button: topList1.button,
         alt: topList1.alt,
+        link: topList1.link,
       },
       robot: {
         bgImage: robotImage?.secure_url,
@@ -73,6 +74,7 @@ export const createServicePage = async (req, res) => {
         description: robot1.description,
         button: robot1.button,
         alt: robot1.alt,
+        link: robot1.link,
       },
       competate: {
         bgImage: competateImage?.secure_url,
@@ -80,12 +82,14 @@ export const createServicePage = async (req, res) => {
         description: competate1.description,
         button: competate1.button,
         alt: competate1.alt,
+        link: competate1.link,
       },
       runway: {
         bgImage: runwayImage?.secure_url,
         title: runway1.title,
         button: runway1.button,
         alt: runway1.alt,
+        link: runway1.link,
       },
     });
     const service = await newService.save();

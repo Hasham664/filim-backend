@@ -27,7 +27,7 @@ export const createFormPost = async (req, res) => {
 
     // Send email with user details
     await sendEmail(
-      'm.hasham3222@gmail.com',
+      'francois@film6.ai',
       'New Form Submission',
       firstName,
       lastName,

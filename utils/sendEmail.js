@@ -37,7 +37,7 @@ const sendEmail = async (
 
     // Email details
     const mailOptions = {
-      from: 'm.hasham3222@gmail.com',
+      from: 'francois@film6.ai',
       to,
       subject,
       html: htmlContent, // Use HTML template

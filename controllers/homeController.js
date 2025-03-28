@@ -59,6 +59,7 @@ export const createHomePage = async (req, res) => {
         description: hero1.description,
         button: hero1.buttonText,
         alt: hero1.alt,
+        link: hero1.link,
       },
       advance: {
         alt: advance1.alt,
@@ -73,6 +74,7 @@ export const createHomePage = async (req, res) => {
         title: topList1.title,
         description: topList1.description,
         button: topList1.button,
+        link: topList1.link,
       },
       robot: {
         alt: robot1.alt,
@@ -80,6 +82,7 @@ export const createHomePage = async (req, res) => {
         title: robot1.title,
         description: robot1.description,
         button: robot1.button,
+        link: robot1.link,
       },
       competate: {
         alt: competate1.alt,
@@ -87,12 +90,14 @@ export const createHomePage = async (req, res) => {
         title: competate1.title,
         description: competate1.description,
         button: competate1.button,
+        link: competate1.link,
       },
       runway: {
         alt: runway1.alt,
         bgImage: runwayImage?.secure_url,
         title: runway1.title,
         button: runway1.button,
+        link: runway1.link,
       },
     });
     const home = await newHome.save();

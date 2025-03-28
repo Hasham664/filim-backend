@@ -19,6 +19,7 @@ const ServicePageSchema = new mongoose.Schema({
     title: { type: String },
     description: { type: String },
     button: { type: String },
+    link: { type: String },
   },
   robot: {
     alt: { type: String },
@@ -26,6 +27,7 @@ const ServicePageSchema = new mongoose.Schema({
     title: { type: String },
     description: { type: String },
     button: { type: String },
+    link: { type: String },
   },
   competate: {
     alt: { type: String },
@@ -33,12 +35,14 @@ const ServicePageSchema = new mongoose.Schema({
     title: { type: String },
     description: { type: String },
     button: { type: String },
+    link: { type: String },
   },
   runway: {
     alt: { type: String },
     bgImage: { type: String },
     title: { type: String },
     button: { type: String },
+    link: { type: String },
   },
 });
 

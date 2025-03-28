@@ -77,6 +77,7 @@ export const createStudioPage = async (req, res) => {
         description: topList1.description,
         description2: topList1.description2,
         button: topList1.button,
+        link: topList1.link,
       },
       toplist2: {
         alt: toplisted.alt,
@@ -87,6 +88,7 @@ export const createStudioPage = async (req, res) => {
         description: toplisted.description,
         description2: toplisted.description2,
         button: toplisted.button,
+        link: toplisted.link,
       },
       competate: {
         alt: competate1.alt,
@@ -96,6 +98,7 @@ export const createStudioPage = async (req, res) => {
         description: competate1.description,
         description2: competate1.description2,
         button: competate1.button,
+        link: competate1.link,
       },
       competate2: {
         alt: competated.alt,
@@ -105,6 +108,7 @@ export const createStudioPage = async (req, res) => {
         description: competated.description,
         description2: competated.description2,
         button: competated.button,
+        link: competated.link,
       },
     });
     const studio = await newStudio.save();
@@ -214,6 +218,7 @@ export const updateStudioPage = async (req, res) => {
       description2: topList1.description2 ,
       button: topList1.button ,
       bgImage: toplistImage?.secure_url || currentStudio.toplist.bgImage,
+      link: topList1.link,
     };
 
     const updatedToplist2 = {
@@ -226,6 +231,7 @@ export const updateStudioPage = async (req, res) => {
         toplisted.description2 ,
       button: toplisted.button ,
       bgImage: toplistImage2?.secure_url || currentStudio.toplist2.bgImage,
+      link: toplisted.link,
     };
 
     const updatedCompetate = {
@@ -238,6 +244,7 @@ export const updateStudioPage = async (req, res) => {
         competate1.description2 ,
       button: competate1.button ,
       bgImage: competateImage?.secure_url || currentStudio.competate.bgImage,
+      link:competate1.link
     };
 
     const updatedCompetate2 = {
@@ -250,6 +257,7 @@ export const updateStudioPage = async (req, res) => {
         competated.description2 ,
       button: competated.button ,
       bgImage: competateImage2?.secure_url || currentStudio.competate2.bgImage,
+      link:competated.link
     };
 
     const updateData = {
